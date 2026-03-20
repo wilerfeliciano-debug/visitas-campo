@@ -148,6 +148,13 @@ function editarVisita(index) {
   document.getElementById('observacoes').value = v.observacoes;  
   editIndex = index;  
 }  
+function excluirVisita(index) {
+  if(confirm("Tem certeza que deseja excluir essa visita?")) {
+    visitas.splice(index, 1); // remove da lista
+    localStorage.setItem('visitasCampo', JSON.stringify(visitas)); // atualiza storage
+    atualizarLista(); // atualiza tela
+  }
+}
   
 // Agendar notificação (simples, no mesmo dia)  
 function agendarNotificacao(visita) {  
