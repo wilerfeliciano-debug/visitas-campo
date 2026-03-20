@@ -126,11 +126,14 @@ function atualizarLista() {
   visitas.forEach((v, index) => {  
     const div = document.createElement('div');  
     div.className = 'visita';  
+    
     div.innerHTML = `<h3>${v.nome} (${v.dia} - ${v.horario})</h3>  
-                     <p>Endereço: ${v.endereco}</p>  
-                     <p>Tipo: ${v.tipo}</p>  
-                     <p>Observações: ${v.observacoes}</p>  
-                     <button class="btn-editar" onclick="editarVisita(${index})">Editar</button>`;  
+                 <p>Endereço: ${v.endereco}</p>  
+                 <p>Tipo: ${v.tipo}</p>  
+                 <p>Observações: ${v.observacoes}</p>  
+                 <button class="btn-editar" onclick="editarVisita(${index})">Editar</button>
+                 <button onclick="excluirVisita(${index})" style="background:red;color:white;border:none;padding:5px 10px;margin-top:5px;border-radius:4px;">Excluir</button>`;
+   
     lista.appendChild(div);  
   });  
 }  
